@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Syama K | Computer Science, Machine Learning &amp; Bioinformatics</title>
+<meta name="description" content="Dr. Syama K: Instructor in Computer Science, Big Data and AI at the University of Wollongong in Dubai, and researcher in machine learning, deep learning and bioinformatics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2321; --muted:#5b6662; --line:#e3e7e4; --bg:#fbfaf7; --card:#ffffff;
+    --accent:#2f6b5a; --accent-soft:#e6f0ec; --max:960px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:16px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+  /* nav */
+  nav{position:sticky;top:0;background:rgba(251,250,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+  nav .brand{font-family:Fraunces,serif;font-weight:600;font-size:1.15rem;color:var(--ink)}
+  nav ul{list-style:none;display:flex;gap:22px}
+  nav ul a{color:var(--muted);font-size:.92rem;font-weight:500}
+  nav ul a:hover{color:var(--accent);text-decoration:none}
+
+  /* hero */
+  header.hero{padding:72px 0 56px}
+  .hero .wrap{display:grid;grid-template-columns:180px 1fr;gap:44px;align-items:center}
+  .avatar{width:180px;height:180px;border-radius:50%;background:var(--accent-soft);display:grid;place-items:center;overflow:hidden;border:4px solid #fff;box-shadow:0 6px 24px rgba(0,0,0,.08)}
+  .avatar span{font-family:Fraunces,serif;font-size:3.4rem;color:var(--accent)}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  h1{font-family:Fraunces,serif;font-weight:600;font-size:2.6rem;line-height:1.15}
+  .role{color:var(--muted);font-size:1.08rem;margin:8px 0 18px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+  .tag{background:var(--accent-soft);color:var(--accent);font-size:.82rem;font-weight:500;padding:4px 12px;border-radius:999px}
+  .links{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 16px;border-radius:8px;font-size:.9rem;font-weight:500}
+  .btn:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+  .btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .btn.primary:hover{background:#255546;color:#fff}
+
+  /* sections */
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  h2{font-family:Fraunces,serif;font-weight:600;font-size:1.7rem;margin-bottom:22px}
+  p+p{margin-top:14px}
+  .lead{max-width:720px;color:#2c3532}
+
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;max-width:620px}
+  .stats.four{grid-template-columns:repeat(4,1fr);max-width:760px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .stat b{display:block;font-family:Fraunces,serif;font-size:2rem;color:var(--accent);line-height:1.1}
+  .stat small{color:var(--muted);font-size:.85rem}
+
+  .themes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .theme{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .theme h3{font-size:1.02rem;margin-bottom:6px}
+  .theme p{color:var(--muted);font-size:.93rem}
+
+  /* publications */
+  .filters{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+  .filters button{font:inherit;font-size:.86rem;border:1px solid var(--line);background:var(--card);color:var(--muted);padding:6px 14px;border-radius:999px;cursor:pointer}
+  .filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .year{font-family:Fraunces,serif;font-size:1.15rem;color:var(--muted);margin:26px 0 10px}
+  .pub{display:grid;grid-template-columns:1fr auto;gap:16px;padding:16px 0;border-bottom:1px dashed var(--line)}
+  .pub .t{font-weight:600}
+  .pub .a{font-size:.92rem;color:#3b4542}
+  .pub .a strong{color:var(--ink)}
+  .pub .v{font-size:.9rem;color:var(--muted);font-style:italic}
+  .pub .meta{text-align:right;white-space:nowrap}
+  .badge{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;padding:2px 8px;border-radius:4px;background:#eef1f0;color:var(--muted)}
+  .badge.j{background:var(--accent-soft);color:var(--accent)}
+  .cites{display:block;font-size:.8rem;color:var(--muted);margin-top:6px}
+
+  /* timeline (experience / education) */
+  .timeline{position:relative;margin-left:8px;padding-left:28px;border-left:2px solid var(--line)}
+  .item{position:relative;padding-bottom:30px}
+  .item:last-child{padding-bottom:0}
+  .item::before{content:"";position:absolute;left:-36px;top:7px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+  .item.now::before{background:var(--accent)}
+  .item-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:baseline}
+  .item h3{font-size:1.06rem}
+  .item .org{color:var(--accent);font-weight:500;font-size:.95rem}
+  .item .when{font-size:.85rem;color:var(--muted);white-space:nowrap;background:#eef1f0;padding:2px 10px;border-radius:999px}
+  .item ul{margin:10px 0 0 18px;color:#3b4542;font-size:.94rem}
+  .item li{margin-bottom:4px}
+  .item .note{color:var(--muted);font-size:.93rem;margin-top:6px}
+  .sub{font-family:Fraunces,serif;font-size:1.25rem;margin:44px 0 18px}
+
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border:1px solid var(--line);background:var(--card);font-size:.88rem;padding:5px 12px;border-radius:8px}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+  .card .k{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin-bottom:6px}
+  .card h3{font-size:1rem;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:.9rem}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .contact-grid div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .contact-grid small{display:block;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+
+  footer{padding:30px 0 40px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+
+  @media (max-width:720px){
+    nav ul{display:none}
+    .hero .wrap{grid-template-columns:1fr;text-align:center;gap:24px}
+    .avatar{margin:0 auto;width:140px;height:140px}
+    .tags,.links{justify-content:center}
+    h1{font-size:2.1rem}
+    .stats.four{grid-template-columns:repeat(2,1fr)}
+    .pub{grid-template-columns:1fr}
+    .pub .meta{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">Syama K</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="avatar">
+      <!-- EDIT: put a photo named photo.jpg next to this file and it will show automatically -->
+      <img src="photo.jpg" alt="Dr. Syama K" onerror="this.remove()">
+      <span>SK</span>
+    </div>
+    <div>
+      <h1>Dr. Syama K</h1>
+      <p class="role">Instructor, Computer Science, Big Data &amp; AI<br>University of Wollongong in Dubai (UOWD)</p>
+      <div class="tags">
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Deep Learning</span>
+        <span class="tag">Bioinformatics</span>
+        <span class="tag">Graph Neural Networks</span>
+        <span class="tag">Large Language Models</span>
+      </div>
+      <div class="links">
+        <a class="btn primary" href="https://scholar.google.com/citations?user=a379y8kAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="btn" href="https://www.linkedin.com/in/syama-k-4b97434a" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://orcid.org/0009-0000-6297-4407" target="_blank" rel="noopener">ORCID</a>
+        <!-- CV button: upload CV.pdf next to this file -->
+        <a class="btn" href="CV.pdf" target="_blank">CV (PDF)</a>
+        <a class="btn" href="mailto:syamak6@gmail.com">Email</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p class="lead">I am a computer science academic and researcher specialising in machine learning, deep learning and bioinformatics. I teach undergraduate Computer Science, Big Data and AI at the University of Wollongong in Dubai, and I hold a PhD in Computer Science from BITS Pilani, Dubai Campus.</p>
+    <p class="lead">My research develops computational tools for metagenomic data. I use graph neural networks, transformers and large language models to predict disease from the human gut microbiome, identify microbial biomarkers, detect antibiotic resistance genes and predict microbe–drug associations. Alongside research, I have more than a decade of university teaching experience, and I enjoy mentoring students on research projects.</p>
+    <div class="stats four">
+      <div class="stat"><b>15+</b><small>Years in academia</small></div>
+      <div class="stat"><b>13</b><small>Publications</small></div>
+      <div class="stat"><b>53</b><small>Citations</small></div>
+      <div class="stat"><b>2</b><small>Patents</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="item now">
+        <div class="item-head">
+          <div><h3>Instructor, Computer Science, Big Data &amp; AI</h3><div class="org">University of Wollongong in Dubai (UOWD), UAE</div></div>
+          <span class="when">Sep 2025 – Present</span>
+        </div>
+        <ul>
+          <li>Delivers lectures, tutorials and laboratory sessions for undergraduate Computer Science students.</li>
+          <li>Develops laboratory materials, practical exercises, assignments and assessments aligned with subject outcomes.</li>
+          <li>Designs and marks programming assignments, lab exercises and student projects using structured rubrics.</li>
+          <li>Supports students in programming, databases, machine learning and big data analytics.</li>
+          <li>Takes part in research initiatives, technical workshops and student engagement activities.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div><h3>Research Scholar, Deep Learning &amp; Data Analytics</h3><div class="org">BITS Pilani, Dubai Campus, UAE</div></div>
+          <span class="when">Aug 2019 – Jan 2025</span>
+        </div>
+        <ul>
+          <li>Designed machine learning and deep learning models for bioinformatics and biomedical data.</li>
+          <li>Developed graph neural network architectures, including GCN, GAT and GraphSAGE.</li>
+          <li>Applied transformer architectures and large language models to healthcare and bioinformatics problems.</li>
+          <li>Supervised three undergraduate students on deep learning research projects.</li>
+          <li>Ran practical sessions in Data Science and assisted labs in C Programming, Computer Networks, SQL and Microprocessors.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div><h3>Assistant Professor, Information Technology</h3><div class="org">MES College of Engineering, Kerala, India</div></div>
+          <span class="when">Aug 2009 – 2016</span>
+        </div>
+        <ul>
+          <li>Taught undergraduate courses in C programming, data structures and algorithms, computer networks, operating systems, computer architecture, artificial neural networks and machine learning.</li>
+          <li>Served on the curriculum development committee for Artificial Neural Networks.</li>
+          <li>Guided student research projects, dissertations and theses, and mentored students on careers and research.</li>
+          <li>Served on the NBA accreditation and ISO committees, and organised workshops, seminars and conferences.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub" id="education">Education</h3>
+    <div class="timeline">
+      <div class="item">
+        <div class="item-head">
+          <div><h3>PhD in Computer Science</h3><div class="org">BITS Pilani, Dubai Campus, UAE</div></div>
+          <span class="when">2026</span>
+        </div>
+        <p class="note">Efficient computational tools for metagenomic and proteomic data using deep learning.</p>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div><h3>M.Tech, Computational Engineering and Networking</h3><div class="org">Amrita Vishwa Vidyapeetham, Coimbatore, India</div></div>
+          <span class="when">2012</span>
+        </div>
+        <p class="note">CGPA 9.1/10, honours degree, university rank 2. Thesis: <em>Malayalam Optical Character Recognition Utilizing Active Contour and SVM Techniques</em>. Graduate teaching assistant for Machine Learning and Computer Networks.</p>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div><h3>B.Tech, Information Technology</h3><div class="org">University of Calicut, Kerala, India</div></div>
+          <span class="when">2004 – 2008</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub">Skills</h3>
+    <div class="chips">
+      <span class="chip">Python</span><span class="chip">R</span><span class="chip">MATLAB</span><span class="chip">SQL</span>
+      <span class="chip">PyTorch</span><span class="chip">TensorFlow</span><span class="chip">Keras</span>
+      <span class="chip">Graph Neural Networks</span><span class="chip">Transformers &amp; LLMs</span><span class="chip">Generative AI</span>
+      <span class="chip">Classification · Clustering · Regression</span><span class="chip">Reinforcement Learning</span>
+      <span class="chip">AWS SageMaker &amp; EC2</span>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="wrap">
+    <h2>Research Interests</h2>
+    <div class="themes">
+      <div class="theme">
+        <h3>Disease prediction from the gut microbiome</h3>
+        <p>Graph-based and deep learning models, such as boosted GraphSAGE and deep forests, that predict disease from human gut metagenomic profiles.</p>
+      </div>
+      <div class="theme">
+        <h3>Antibiotic resistance genes</h3>
+        <p>Cross-feature transformers and ensembles of fine-tuned large language models that identify resistance genes directly from metagenomic sequences.</p>
+      </div>
+      <div class="theme">
+        <h3>Microbial biomarkers and drug associations</h3>
+        <p>Microbial interaction networks, metapath node embeddings and self-supervised learning to find biomarkers and predict microbe–drug links.</p>
+      </div>
+      <div class="theme">
+        <h3>Sequence modelling</h3>
+        <p>Bidirectional LSTMs and other sequence models for gene prediction in metagenomic data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="wrap">
+    <h2>Publications</h2>
+    <div class="filters">
+      <button class="on" data-f="all">All</button>
+      <button data-f="journal">Journal</button>
+      <button data-f="conference">Conference</button>
+    </div>
+    <div id="pub-list"></div>
+    <p style="margin-top:24px;font-size:.9rem;color:var(--muted)">Citation counts are from <a href="https://scholar.google.com/citations?user=a379y8kAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.</p>
+
+    <h3 class="sub">Patents</h3>
+    <div class="cards">
+      <div class="card">
+        <div class="k">Filed · Indian Patent Office · Aug 2025</div>
+        <h3>Artificial intelligence-based system and method for detection of antibiotic-resistant gene</h3>
+        <p>J. Angel Arul Jothi, Syama K. Application No. 202511075239. Filed with request for examination.</p>
+      </div>
+      <div class="card">
+        <div class="k">In preparation</div>
+        <h3>Weighted Heterogeneous Graph Transformer for Microbial Biomarker Identification from Human Gut Metagenomic Data</h3>
+        <p>J. Angel Arul Jothi, Syama K. With patent attorney for drafting.</p>
+      </div>
+    </div>
+
+    <h3 class="sub">Recognition &amp; Service</h3>
+    <div class="cards">
+      <div class="card">
+        <div class="k">Women in Research Forum, University of Sharjah</div>
+        <h3>CRC-Detector</h3>
+        <p>Featured work at the 4th forum: a computer-aided diagnosis application for colorectal cancer from multi-source medical data.</p>
+      </div>
+      <div class="card">
+        <div class="k">Volunteer</div>
+        <h3>KDIR / IC3K 2024</h3>
+        <p>Research volunteer at the 16th International Conference on Knowledge Discovery and Information Retrieval.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div><small>Email</small><a href="mailto:syamak6@gmail.com">syamak6@gmail.com</a></div>
+      <div><small>Affiliation</small>University of Wollongong in Dubai<br>Dubai, UAE</div>
+      <div><small>Profiles</small><a href="https://scholar.google.com/citations?user=a379y8kAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a> · <a href="https://www.linkedin.com/in/syama-k-4b97434a" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://orcid.org/0009-0000-6297-4407" target="_blank" rel="noopener">ORCID</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Syama K · Citation figures from Google Scholar, November 2026.</div>
+</footer>
+
+<script>
+/* To add a paper, copy one line below and edit it.
+   type: "journal" or "conference"   cites: number from Google Scholar */
+const pubs = [
+  {y:2026, type:"conference", cites:0, t:"Comparative analysis of traditional machine learning and graph neural network models for anti-money laundering detection", a:"A Reddy, A Hamad, GA Paul, M Pradeep, M Hasheer, U Syed, K Syama, A Famnaz", v:"IEEE ICAIGE & S4IoT 2026, Kuwait City, Kuwait"},
+  {y:2023, type:"conference", cites:0, t:"Microbe-drug association prediction using heterogeneous interaction network and graph attention network", a:"K Syama, JAA Jothi", v:"International Conference on Computational Intelligence and Network Systems (CINS)"},
+  {y:2026, type:"journal", cites:0,  t:"Antibiotic resistance gene identification using cross-feature transformer from metagenomic data", a:"K Syama, JAA Jothi", v:"Engineering Applications of Artificial Intelligence 177, 114945", id:"W7OEmFMy1HYC"},
+  {y:2025, type:"journal", cites:1,  t:"Microbe-drug association prediction using metapath aggregated node embeddings and self-supervised learning", a:"K Syama, JAA Jothi, A Sivakumar", v:"Evolving Systems 16 (2), 58", id:"Tyk-4Ss8FVUC", url:"https://doi.org/10.1007/s12530-025-09689-7"},
+  {y:2025, type:"conference", cites:0, t:"Disease Prediction and Biomarker Identification using Recursive Feature Elimination and Deep Forest classifier from Human Gut Metagenomic Data", a:"K Syama, JAA Jothi", v:"2025 IEEE International Symposium on Technology and Society (ISTAS), 1-7", id:"Y0pCki6q_DkC"},
+  {y:2024, type:"conference", cites:0, t:"Antibiotic Resistance Gene Identification from Metagenomic Data Using Ensemble of Finetuned Large Language Models", a:"K Syama, JAA Jothi", v:"KDIR 2024, 102-112", id:"zYLM7Y9cAGgC"},
+  {y:2023, type:"journal", cites:38, t:"Automatic disease prediction from human gut metagenomic data using boosting GraphSAGE", a:"K Syama, JAA Jothi, N Khanna", v:"BMC Bioinformatics 24 (1), 126", id:"9yKSN-GCB0IC"},
+  {y:2023, type:"journal", cites:2,  t:"Microbial Biomarkers Identification for Human Gut Disease Prediction using Microbial Interaction Network Embedded Deep Learning", a:"A Sivakumar, K Syama, JAA Jothi", v:"International Journal of Advanced Computer Science and Applications 14 (6)", id:"2osOgNQ5qMEC"},
+  {y:2023, type:"conference", cites:1, t:"Metagenomic Gene Prediction Using Bidirectional LSTM", a:"K Syama, JAA Jothi", v:"International Conference on Soft Computing and its Engineering Applications", id:"UeHWp8X0CEIC"},
+  {y:2023, type:"conference", cites:1, t:"A Convolutional Neural Network Based Real Time Fingerprint Recognition for Attendance Monitoring", a:"IR Mohammed, JAA Jothi, K Syama", v:"First International Conference on Real Time Intelligent Systems, 233-245", id:"IjCSPb-OGe4C"},
+  {y:2021, type:"conference", cites:2, t:"Analysis of colon cancer metagenomic data using machine learning", a:"K Syama, K Jain, J Angel Arul Jothi, N Khanna", v:"Proceedings of International Conference on Data Science and Applications", id:"d1gkVwhDpl0C"},
+  {y:2013, type:"conference", cites:4, t:"Malayalam OCR: N-gram approach using SVM classifier", a:"AT Jia, Y Ayappally, K Syama", v:"International Conference on Advances in Computing, Communications and Informatics (ICACCI)", id:"u5HHmVD_uO8C"},
+  {y:2012, type:"conference", cites:4, t:"Performance study of active contour model based character segmentation with nonlinear diffusion", a:"K Syama, N George, S Sekhar, CS Neethu, MS Manikandan, KP Soman", v:"International Conference on Advances in Computing and Communications", id:"u-x6o8ySG0sC"},
+];
+
+const scholar = id => `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=a379y8kAAAAJ&citation_for_view=a379y8kAAAAJ:${id}`;
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const bold = a => esc(a).replace(/(K Syama)/g,"<strong>$1</strong>");
+
+function render(filter){
+  const list = pubs.filter(p => filter==="all" || p.type===filter).sort((a,b)=>b.y-a.y);
+  let html = "", last = null;
+  for(const p of list){
+    if(p.y!==last){ html += `<div class="year">${p.y}</div>`; last = p.y; }
+    html += `<div class="pub">
+      <div>
+        <div class="t">${(p.url||p.id) ? `<a href="${p.url||scholar(p.id)}" target="_blank" rel="noopener">${esc(p.t)}</a>` : esc(p.t)}</div>
+        <div class="a">${bold(p.a)}</div>
+        <div class="v">${esc(p.v)}</div>
+      </div>
+      <div class="meta">
+        <span class="badge ${p.type==="journal"?"j":""}">${p.type}</span>
+        ${p.cites?`<span class="cites">${p.cites} citation${p.cites>1?"s":""}</span>`:""}
+      </div>
+    </div>`;
+  }
+  document.getElementById("pub-list").innerHTML = html;
+}
+document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".filters button").forEach(x=>x.classList.remove("on"));
+  b.classList.add("on"); render(b.dataset.f);
+});
+render("all");
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
